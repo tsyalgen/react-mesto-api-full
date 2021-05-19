@@ -1,0 +1,11 @@
+.login__form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -215px;
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    padding: 36px;
+    box-sizing: border-box;
+}

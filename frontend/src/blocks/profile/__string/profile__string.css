@@ -1,0 +1,12 @@
+.profile__string {
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 910px) {
+    .profile__string {
+        justify-content: center;
+    }
+}

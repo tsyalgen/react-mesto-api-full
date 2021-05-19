@@ -1,0 +1,15 @@
+.header__menu_type_button {
+    background-color: #000000;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    padding: 0;
+}

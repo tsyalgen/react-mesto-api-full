@@ -1,0 +1,13 @@
+.login__field {
+    border: none;
+    width: 100%;
+    background-color: black;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+    /*border-bottom: 2px solid #CCCCCC;*/
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}

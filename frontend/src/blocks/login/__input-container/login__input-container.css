@@ -1,0 +1,9 @@
+.login__input-container {
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #CCCCCC;
+}
+
+.login__input-container:first-of-type {
+    margin-top: 40px;
+}
