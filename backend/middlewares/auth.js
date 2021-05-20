@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization || !authorization.startsWith('Bearer')) {
-    next(new AuthError('Неправильные почта или пароль'));
+    next(new AuthError('Некорректный токен'));
   }
 
   const token = authorization.replace('Bearer ', '');
@@ -17,7 +17,7 @@ module.exports = (req, res, next) => {
   try {
     payload = jwt.verify(token, `${NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret-key'}`);
   } catch (err) {
-    next(new AuthError('Неправильные почта или пароль'));
+    next(new AuthError('Некорректный токен'));
   }
   req.user = payload;
 

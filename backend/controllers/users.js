@@ -56,7 +56,16 @@ module.exports.createUser = (req, res, next) => {
           .then((hash) => User.create({
             email, name, about, avatar, password: hash,
           })
-            .then((userData) => res.send({ data: userData }))
+            .then((userData) => res.send({
+              data:
+                {
+                  name: userData.name,
+                  about: userData.about,
+                  avatar: userData.avatar,
+                  _id: userData._id,
+                  email: userData.email,
+                },
+            }))
             .catch((err) => {
               if (err.name === 'ValidationError') {
                 next(new BadRequestError('Переданы некорректные данные при создании пользователя'));
@@ -77,7 +86,7 @@ module.exports.login = (req, res, next) => {
   User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign({ _id: user._id },
-        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
+        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret-key',
         { expiresIn: '7d' });
       res.send({ token });
     })
